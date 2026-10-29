@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>John M. | Technology student starting with Applied Statistics and Data Science</title>
+<meta name="description" content="Personal portfolio of John M., a first-year Applied Statistics and Data Science student exploring technology broadly.">
+<meta name="theme-color" content="#121413">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23121413'/%3E%3Ctext x='16' y='23' font-size='20' font-family='Georgia' font-style='italic' text-anchor='middle' fill='%23b6e04a'%3EJ%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#121413; --surface:#1a1d1b; --line:#2b312d; --text:#e9ece6; --muted:#9ba49c;
+  --lime:#b6e04a; --lime-dim:#8fb23a; --on-lime:#10150a;
+  --sans:"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --wrap:1080px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:72px}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1.0625rem/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--lime);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--lime);outline-offset:3px;border-radius:3px}
+.wrap{width:min(var(--wrap),100% - 2.5rem);margin-inline:auto}
+section{padding:5rem 0;border-top:1px solid var(--line)}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em;margin:0}
+h2{font-size:clamp(1.6rem,3.5vw,2.1rem);font-weight:600;margin-bottom:1.5rem}
+h3{font-size:1.125rem;font-weight:600;letter-spacing:-.01em}
+p{margin:0 0 1rem;max-width:62ch}
+.muted{color:var(--muted)}
+.skip{position:absolute;left:-999px;top:0;background:var(--lime);color:var(--on-lime);padding:.6rem 1rem;z-index:100}
+.skip:focus{left:0}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(18,20,19,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{color:var(--text);text-decoration:none;font-weight:600;letter-spacing:-.01em}
+.brand span{color:var(--lime)}
+nav ul{display:flex;gap:1.75rem;list-style:none;margin:0;padding:0}
+nav a{color:var(--muted);text-decoration:none;font-size:.97rem;padding:.4rem 0;border-bottom:1px solid transparent}
+nav a:hover{color:var(--text);border-bottom-color:var(--lime)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:6px;padding:.45rem .8rem;font:inherit;font-size:.95rem;cursor:pointer}
+
+/* hero */
+.hero{padding:5.5rem 0 5rem;border-top:0}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:4rem;align-items:center}
+.hero h1{font-size:clamp(2.5rem,6.5vw,4.4rem);font-weight:650;letter-spacing:-.035em;margin-bottom:1.5rem}
+.lead{font-size:1.2rem;color:#c9cfc6;max-width:34em}
+.cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2rem}
+.btn{display:inline-block;padding:.75rem 1.3rem;border-radius:6px;font-weight:600;text-decoration:none;font-size:1rem;border:1px solid var(--lime);font-family:inherit;cursor:pointer}
+.btn-primary{background:var(--lime);color:var(--on-lime)}
+.btn-primary:hover{background:#c7ee5a}
+.btn-ghost{background:transparent;color:var(--lime)}
+.btn-ghost:hover{background:rgba(182,224,74,.1)}
+@media (prefers-reduced-motion:no-preference){.hero-grid{animation:rise .6s ease-out both}}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* portrait */
+.portrait{position:relative;aspect-ratio:4/5;width:100%;max-width:340px;margin-inline:auto;background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
+.portrait .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;text-align:center;padding:1.5rem;color:var(--muted);font-size:.92rem;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:34px 34px;background-position:center}
+.portrait .ph svg{width:56px;height:56px;stroke:var(--lime-dim);fill:none;stroke-width:1.5;background:var(--surface);padding:6px;border-radius:50%}
+.portrait .ph span{background:var(--surface);padding:.2rem .5rem;border-radius:4px}
+.portrait.has-photo .ph{display:none}
+.corner{position:absolute;width:16px;height:16px;border:2px solid var(--lime);z-index:2}
+.c1{top:10px;left:10px;border-right:0;border-bottom:0}.c2{bottom:10px;right:10px;border-left:0;border-top:0}
+
+/* about + skills */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem}
+.skills{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.skills li{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:.9rem 1.1rem;border-top:1px solid var(--line)}
+.skills li:first-child{border-top:0}
+.tag{font-family:var(--mono);font-size:.78rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:.15rem .65rem;white-space:nowrap}
+.tag.now{color:var(--lime);border-color:var(--lime-dim)}
+
+/* projects */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1.5rem;display:flex;flex-direction:column;gap:.9rem}
+.card p{margin:0;color:#c9cfc6;font-size:1rem}
+.card .tag{align-self:flex-start}
+.note{margin-top:1.5rem;font-size:.95rem}
+
+/* journey */
+.path{list-style:none;margin:0;padding:0 0 0 1.5rem;border-left:1px solid var(--line)}
+.path li{position:relative;padding:0 0 2rem 1.25rem}
+.path li:last-child{padding-bottom:0}
+.path li::before{content:"";position:absolute;left:calc(-1.5rem - 5px);top:.55rem;width:9px;height:9px;border-radius:50%;background:var(--bg);border:2px solid var(--lime-dim)}
+.path li.now::before{background:var(--lime);border-color:var(--lime)}
+.path h3{margin-bottom:.25rem}
+.path .when{font-family:var(--mono);font-size:.8rem;color:var(--lime-dim);display:block;margin-bottom:.3rem}
+.path p{margin:0;color:#c9cfc6}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:3.5rem}
+.links{list-style:none;margin:1.25rem 0 0;padding:0;display:grid;gap:.6rem}
+.links .off{color:var(--muted);font-size:.95rem}
+form{display:grid;gap:1.1rem}
+label{display:grid;gap:.4rem;font-size:.95rem;color:var(--muted)}
+input,textarea{font:inherit;color:var(--text);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:.7rem .85rem;width:100%}
+input:focus-visible,textarea:focus-visible{outline:2px solid var(--lime);outline-offset:1px;border-color:var(--lime)}
+textarea{min-height:130px;resize:vertical}
+.form-note{font-size:.9rem;color:var(--muted);margin:0}
+#status{min-height:1.5rem;margin:0;color:var(--lime);font-size:.95rem}
+#status.err{color:#e6a86a}
+
+footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.93rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+
+@media (max-width:860px){
+  .hero-grid,.two,.contact-grid{grid-template-columns:1fr;gap:2.5rem}
+  .cards{grid-template-columns:1fr}
+  .portrait{max-width:280px;margin-inline:0}
+  section{padding:3.75rem 0}.hero{padding:3.5rem 0}
+}
+@media (max-width:720px){
+  .menu-btn{display:block}
+  nav{position:absolute;left:0;right:0;top:64px;background:var(--bg);border-bottom:1px solid var(--line);display:none}
+  nav.open{display:block}
+  nav ul{flex-direction:column;gap:0;padding:.5rem 1.25rem 1rem}
+  nav a{display:block;padding:.8rem 0;border-bottom:1px solid var(--line)}
+}
+
+/* personal touches */
+::selection{background:var(--lime);color:var(--on-lime)}
+.hero h1 em{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-weight:400;color:var(--lime);letter-spacing:-.02em}
+.now{margin-top:2.25rem;font-family:var(--mono);font-size:.9rem;color:var(--muted);border-left:2px solid var(--lime);padding:.2rem 0 .2rem 1rem;display:grid;gap:.35rem;max-width:30rem}
+.now b{color:var(--lime);font-weight:500;display:inline-block;min-width:4.2rem}
+.now span{color:var(--text)}
+.rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.rows li{display:grid;grid-template-columns:1fr auto;gap:.3rem 1.5rem;padding:1.5rem .75rem 1.5rem 1rem;border-bottom:1px solid var(--line);border-left:2px solid transparent;transition:border-color .2s,background .2s}
+.rows li:hover{border-left-color:var(--lime);background:var(--surface)}
+.rows p{grid-column:1;margin:0;color:#c9cfc6;font-size:1rem}
+.rows .tag{grid-row:1;grid-column:2;align-self:start}
+.aside{font-family:Georgia,"Times New Roman",serif;font-style:italic;color:var(--lime);font-size:1.15rem}
+@media (max-width:860px){.rows li{grid-template-columns:1fr}.rows .tag{grid-row:auto;grid-column:1;justify-self:start;order:-1}}
+.portrait img[hidden]{display:none}
+.rows li a{grid-column:1;justify-self:start}
+.sub{font-size:1.05rem;margin:2rem 0 .6rem}.sub:first-of-type{margin-top:0}
+.subnote{font-size:.93rem;margin:0 0 .8rem}
+.layers{margin:1.75rem 0 0;border-top:1px solid var(--line)}
+.layers>div{display:grid;grid-template-columns:7.5rem 1fr;gap:1rem;padding:.8rem 0;border-bottom:1px solid var(--line)}
+.layers dt{font-family:var(--mono);font-size:.82rem;color:var(--lime);padding-top:.15rem}
+.layers dd{margin:0;color:#c9cfc6;font-size:1rem}
+.chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem}
+.chips li{border:1px solid var(--line);border-radius:999px;padding:.3rem .85rem;font-size:.93rem}
+.chips li.open{border-style:dashed;color:var(--muted)}
+.now b{min-width:5rem}
+@media (max-width:520px){.layers>div{grid-template-columns:1fr;gap:.2rem}.now b{display:block;min-width:0}}
+.id{font-family:var(--mono);font-size:.82rem;color:var(--muted);margin:0 0 1.25rem}
+.layers dd .skills{margin:0}.layers.groups dd{padding-top:.1rem}
+.rows .meta{font-family:var(--mono);font-size:.82rem;color:var(--muted)}
+.path li.done::before{background:var(--lime-dim);border-color:var(--lime-dim)}
+.note-entry{border-top:1px solid var(--line);padding:1.25rem 0}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top">John M<span>.</span></a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="siteNav">Menu</button>
+    <nav id="siteNav" aria-label="Main">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#fields">Fields</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#journey">Learning Journey</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="id">John M. · Applied Statistics &amp; Data Science · Co-operative University of Kenya</p>
+        <h1>Learning how technology can turn <em>ideas</em> into impact.</h1>
+        <p class="lead">I’m a first-year student building my foundation in statistics and data, and I’m curious about the rest of technology too: programming, AI, software and the systems behind them. I learn by trying things, and this site is where I keep track.</p>
+        <div class="now" aria-label="Where I am right now"><div><b>now</b><span>Python and statistics fundamentals</span></div><div><b>trying</b><span>small web and API experiments</span></div><div><b>curious</b><span>AI and machine learning, most of all</span></div></div>
+        <div class="cta">
+          <a class="btn btn-primary" href="#projects">Explore my work</a>
+          <a class="btn btn-ghost" href="#journey">Follow my learning journey</a>
+        </div>
+      </div>
+      <!-- To show your photo, save it as profile.jpg next to this file. It appears automatically. -->
+      <div class="portrait" id="portrait">
+        <span class="corner c1"></span><span class="corner c2"></span>
+        <img id="portraitImg" src="profile.jpg" alt="Portrait of John M." hidden>
+        <div class="ph" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><circle cx="24" cy="18" r="8"/><path d="M8 42c2-9 8-14 16-14s14 5 16 14"/></svg>
+          <span>Your photo goes here</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap two">
+      <div>
+        <h2>About</h2>
+        <p class="aside">The short version.</p>
+        <p>I’m John, a first-year student at the Co-operative University of Kenya. Applied Statistics and Data Science is my starting point, and I’m building the basics from the beginning. I’m not an expert at anything yet, and I’d rather say that plainly.</p>
+        <p>I’m interested in technology well beyond my degree. I learn best by experimenting, so I’ve been trying small things in Python and on the web, and I want to move from understanding the basics to building real things.</p>
+        <p>My specialisation is still open. I’d like it to stay that way while I explore.</p>
+        <dl class="layers">
+          <div><dt>Studying</dt><dd>BSc Applied Statistics and Data Science, first year</dd></div>
+          <div><dt>Learning now</dt><dd>Python, statistics, web basics, Git and GitHub</dd></div>
+          <div><dt>Built</dt><dd>Small learning experiments (see Projects). No finished project published yet.</dd></div>
+        </dl>
+      </div>
+      <div>
+        <h2>Tools I’ve used</h2>
+        <p class="muted subnote">Exposure from learning, not mastery.</p>
+        <!-- ADD OR REMOVE A TOOL: copy or delete one whole list line. -->
+        <ul class="chips">
+          <li>PyDroid</li>
+          <li>Termux</li>
+          <li>Acode</li>
+          <li>A laptop development setup</li>
+          <li>GitHub</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="fields">
+    <div class="wrap">
+      <h2>Fields I’m exploring</h2>
+      <!-- ADD OR REMOVE ANYTHING: copy or delete one whole list line inside a group.
+           Move a field between groups as it becomes more real. -->
+      <dl class="layers groups">
+        <div><dt>Foundation</dt><dd>Applied statistics and data science (my degree)</dd></div>
+        <div><dt>Learning now</dt><dd>
+          <ul class="skills">
+            <li>Python <span class="tag now">Learning</span></li>
+            <li>Statistics fundamentals <span class="tag now">Learning</span></li>
+            <li>Data analysis and visualisation <span class="tag now">Beginner</span></li>
+            <li>HTML, CSS and JavaScript <span class="tag now">Beginner</span></li>
+            <li>Git and GitHub <span class="tag now">Learning</span></li>
+          </ul></dd></div>
+        <div><dt>Curious about</dt><dd>
+          <ul class="chips">
+            <li>AI and machine learning</li>
+            <li>Backend and APIs</li>
+            <li>Web development</li>
+            <li>Automation</li>
+            <li>Software engineering</li>
+            <li>Databases</li>
+          </ul></dd></div>
+        <div><dt>Maybe later</dt><dd>
+          <ul class="chips">
+            <li>Deep learning</li>
+            <li>Cybersecurity</li>
+            <li>Cloud and DevOps</li>
+            <li>Data engineering</li>
+            <li class="open">Fields I haven’t found yet</li>
+          </ul></dd></div>
+      </dl>
+      <p class="muted note">Curious and maybe-later fields are interests, not skills.</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <!--
+          EDITING A PROJECT
+          1. Change the tag to: Planned, Experiment, In progress or Completed.
+          2. When there is real work, add a meta line (tools, what I learned)
+             and a link after the paragraph, for example:
+             <a href="https://github.com/your-name/your-repo">View on GitHub</a>
+          Only link to work that exists. To add a project, copy a whole list item.
+        -->
+        <ul class="rows">
+        <li><h3>Kenya public-data exploration</h3><span class="tag">Planned</span><p>Investigate a real, properly sourced Kenyan dataset and explain what it shows in plain language.</p><p class="meta">Likely tools: Python, spreadsheets, charts</p></li>
+        <li><h3>Statistics playground</h3><span class="tag">Planned</span><p>Small, understandable demonstrations of statistical concepts such as averages, spread and sampling.</p></li>
+        <li><h3>Python learning log</h3><span class="tag">Planned</span><p>Exercises, concepts and lessons from my Python practice, written as I go.</p></li>
+        <!-- UPDATE THE ROW BELOW to say exactly how far it got: got an access token,
+             prepared a payment request, or completed a real payment. -->
+        <li><h3>M-Pesa and Daraja learning experiment</h3><span class="tag">Experiment</span><p>A small learning project to see how a Flask app talks to the Safaricom Daraja API. It is not a working payment system, and I’m not claiming any real transactions.</p><p class="meta">Used: Python, Flask, Safaricom Daraja API</p></li>
+      </ul>
+      <p class="muted note">Status key: Planned, Experiment, In progress, Completed. None of these are finished yet. They start with data because that is my foundation, and projects here can grow into other areas as my interests do.</p>
+    </div>
+  </section>
+
+  <section id="journey">
+    <div class="wrap">
+      <h2>Learning journey</h2>
+      <!-- ADD A MILESTONE: copy one whole list item. Use "So far" for things done,
+             "Now", "Goal" or "Open". Only add what is true. No fake dates. -->
+      <ol class="path">
+        <li class="done"><span class="when">So far</span><h3>First steps in web and Python</h3><p>HTML, CSS and JavaScript basics, GitHub, and beginner Python exercises, using PyDroid, Termux, Acode and a laptop.</p></li>
+        <li class="done"><span class="when">So far</span><h3>A Flask and Daraja experiment</h3><p>A small project to see how a web app talks to the Safaricom Daraja API.</p></li>
+        <li class="now"><span class="when">Now</span><h3>Python and statistics fundamentals</h3><p>Building solid basics and learning to reason with data.</p></li>
+        <li><span class="when">Goal</span><h3>Working with a real dataset</h3><p>Cleaning a table and drawing charts from data that is not made up for a lesson.</p></li>
+        <li><span class="when">Goal</span><h3>Publishing a first project</h3><p>Finish one small project, put it on GitHub and write up what I learned.</p></li>
+        <li><span class="when">Goal</span><h3>Inference, regression and intro machine learning</h3><p>Once the statistics underneath feels solid.</p></li>
+        <li><span class="when">Open</span><h3>Following my curiosity</h3><p>Try small projects in software, AI, security or cloud and see what sticks. I’m not deciding my speciality yet.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="notes">
+    <div class="wrap">
+      <h2>Learning notes</h2>
+      <!-- ADD A NOTE: copy this whole block, remove the comment markers, and edit.
+      <article class="note-entry"><h3>Title of what I learned</h3><p>A few honest sentences: the idea, what I tried, and any mistake.</p></article>
+      -->
+      <p class="muted">No notes yet. This is where I’ll write down concepts, experiments and mistakes I learn from.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <h2>Contact</h2>
+        <p>If you’d like to say hello, suggest a dataset, or share advice for a beginner, I’d be glad to hear from you.</p>
+        <ul class="links" id="links"></ul>
+      </div>
+      <form id="contactForm" novalidate>
+        <label>Your name
+          <input id="name" name="name" autocomplete="name" required>
+        </label>
+        <label>Message
+          <textarea id="message" name="message" required></textarea>
+        </label>
+        <button class="btn btn-primary" type="submit">Open in my email app</button>
+        <p class="form-note">This form does not send anything through a server. It opens your own email app with the message filled in, and you send it from there.</p>
+        <p id="status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="year"></span> John M.</span>
+    <span>Built by John in Kenya with plain HTML, CSS and JavaScript.</span>
+  </div>
+</footer>
+
+<script>
+/* ===== EDIT THESE THREE VALUES ===== */
+const CONFIG = {
+  email: "your.email@example.com",            // your real email address
+  github: "https://github.com/johnmainaa0-boop",                                  // e.g. "https://github.com/yourname"
+  linkedin: ""                                 // e.g. "https://www.linkedin.com/in/yourname"
+};
+/* =================================== */
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Mobile menu
+const btn = document.getElementById("menuBtn");
+const nav = document.getElementById("siteNav");
+function setMenu(open){
+  nav.classList.toggle("open", open);
+  btn.setAttribute("aria-expanded", String(open));
+  btn.textContent = open ? "Close" : "Menu";
+}
+btn.addEventListener("click", () => setMenu(!nav.classList.contains("open")));
+nav.addEventListener("click", e => { if (e.target.closest("a")) setMenu(false); });
+document.addEventListener("keydown", e => { if (e.key === "Escape") setMenu(false); });
+window.addEventListener("resize", () => { if (window.innerWidth > 720) setMenu(false); });
+
+// Portrait: show profile.jpg only if it loads, otherwise keep the placeholder
+const img = document.getElementById("portraitImg");
+const box = document.getElementById("portrait");
+const probe = new Image();
+probe.onload = () => { img.hidden = false; box.classList.add("has-photo"); };
+probe.src = "profile.jpg";
+
+// Contact links: real link when set, plain note when not
+const emailSet = CONFIG.email && CONFIG.email !== "your.email@example.com";
+const items = [
+  ["GitHub", CONFIG.github, CONFIG.github],
+  ["LinkedIn", CONFIG.linkedin, CONFIG.linkedin],
+  ["Email", emailSet ? CONFIG.email : "", emailSet ? "mailto:" + CONFIG.email : ""]
+];
+const list = document.getElementById("links");
+items.forEach(([label, text, href]) => {
+  const li = document.createElement("li");
+  if (href) {
+    const a = document.createElement("a");
+    a.href = href; a.textContent = label + ": " + text;
+    if (label !== "Email") { a.target = "_blank"; a.rel = "noopener noreferrer"; }
+    li.appendChild(a);
+  } else {
+    li.className = "off";
+    li.textContent = label + ": not added yet (edit CONFIG in index.html)";
+  }
+  list.appendChild(li);
+});
+
+// Contact form (mailto)
+const form = document.getElementById("contactForm");
+const statusEl = document.getElementById("status");
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  statusEl.className = "";
+  const name = document.getElementById("name").value.trim();
+  const message = document.getElementById("message").value.trim();
+  if (!name || !message) {
+    statusEl.className = "err";
+    statusEl.textContent = "Please fill in your name and a message.";
+    return;
+  }
+  if (!emailSet) {
+    statusEl.className = "err";
+    statusEl.textContent = "The site owner has not set an email address yet, so this form can’t open an email.";
+    return;
+  }
+  const subject = encodeURIComponent("Message from " + name + " via your portfolio");
+  const body = encodeURIComponent(message + "\n\nFrom: " + name);
+  window.location.href = "mailto:" + CONFIG.email + "?subject=" + subject + "&body=" + body;
+  statusEl.textContent = "Your email app should open with the message ready. Nothing is sent until you press send there.";
+});
+</script>
+</body>
+</html>
